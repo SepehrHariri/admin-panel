@@ -1,5 +1,4 @@
 import Head from "next/head";
-import styles from "@/styles/Home.module.css";
 import Dashboard from "@/pages/dashboard";
 import Header from "@/components/Header";
 import SideMenu from "@/components/SideMenu";
@@ -19,7 +18,7 @@ export default function Home() {
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-        <main className={styles.main}>
+        <main>
           <Header />
           {
             session && (
@@ -31,7 +30,7 @@ export default function Home() {
           }
           <Login />
         </main>
-        <footer className={styles.footer}>
+        <footer>
 
         </footer>
     </>
