@@ -13,6 +13,7 @@ export default function Home() {
     <>
       <Head>
         <title>Admin Panel</title>
+        <meta charSet="utf-8" />
         <meta name="description" content="Admin Panel" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
