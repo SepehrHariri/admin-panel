@@ -36,7 +36,6 @@ function Dashboard() {
 
       </Head>
       <h1>Dashboard</h1>
-      
     </>
   )
 }

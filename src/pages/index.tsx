@@ -5,9 +5,11 @@ import SideMenu from "@/components/SideMenu";
 
 import Login from "@/components/Login/Login";
 import { useSession } from "next-auth/react";
+import scss from "./Home.module.css"
+import React from "react"
 
 
-export default function Home() {
+const Home :React.FC = () => {
   const { data: session } = useSession()
   return (
     <>
@@ -19,7 +21,7 @@ export default function Home() {
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-        <main>
+        <main className={scss.main}>
           <Header />
           {
             session && (
@@ -37,3 +39,4 @@ export default function Home() {
     </>
   );
 }
+export default Home;
