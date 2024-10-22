@@ -1,14 +1,23 @@
 // import "@/styles/globals.css";
 import { SessionProvider } from "next-auth/react"
-import { CssBaseline } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+const ColorModeContext = React.createContext({ toggleColorMode: () => {} })
+import React from "react"
 
-export default function App({
+const App: React.FC = ({
   Component, pageProps: { session, ...pageProps }
-}) {
+}) => {
   return (
-    <SessionProvider session={session}>
-      <CssBaseline />
-      <Component {...pageProps}/>
-    </SessionProvider>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <SessionProvider session={session}>
+          <CssBaseline />
+          <Component {...pageProps}/>
+        </SessionProvider>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
+
   )
 }
+
+export default App

@@ -9,12 +9,12 @@ import scss from "./Home.module.css"
 import React from "react"
 
 
-const Home :React.FC = () => {
+const Home: React.FC = () => {
   const { data: session } = useSession()
   return (
     <>
       <Head>
-        <title>Admin Panel</title>
+        <title>Sepehr - Dashboard</title>
         <meta charSet="utf-8" />
         <meta name="description" content="Admin Panel" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
