@@ -1,41 +1,50 @@
-import { SessionProvider } from "next-auth/react"
-import { CssBaseline, IconButton, ThemeProvider, useTheme, createTheme } from "@mui/material";
-import React from "react"
+import {SessionProvider} from "next-auth/react"
+import React from "react";
+import {createTheme, ThemeProvider} from "@mui/material/styles";
+import {CssBaseline} from "@mui/material";
+import darkTheme from "@/theme/darkTheme";
+import lightTheme from "@/theme/lightTheme";
+import Header from "@/components/Header";
 
-const ColorModeContext = React.createContext({ toggleColorMode: () => {} })
+const ColorModeContext = React.createContext({
+    toggleColorMode: () => {}
+});
 
-const App = ({
-  Component, pageProps: { session, ...pageProps }
-}) => {
-    const [mode, setMode] = React.useState<'light' | 'dark'>('light');
+const App = ({Component, pageProps: {session, ...pageProps}}) => {
+
+    const [mode, setMode] = React.useState<'light' | 'dark'>('dark');
     const colorMode = React.useMemo(
-      () => ({
-        toggleColorMode: () => {
-          setMode((prevMode:"light"|"dark") => (prevMode === 'light' ? 'dark' : 'light'));
-        },
-      }),
-      [],
-    );
-    
-    const theme = React.useMemo(
-      () =>
-        createTheme({
-          palette: {
-            mode,
-          },
+        () => ({
+            toggleColorMode: () => {
+                setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+            },
         }),
-        [mode],
+        [],
     );
-  return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <SessionProvider session={session}>
-          <CssBaseline />
-          <Component {...pageProps}/>
-        </SessionProvider>
-      </ThemeProvider>
-    </ColorModeContext.Provider>
-  )
-}
 
-export default App
+    const darkThemeChosen = React.useMemo(
+        () =>
+            createTheme({
+                ...darkTheme
+            }),
+        [mode],
+    )
+    const lightThemeChosen = React.useMemo(
+        () =>
+            createTheme({
+                ...lightTheme,
+            }),
+        [mode],
+    )
+    return (<ColorModeContext.Provider value={colorMode}>
+            <ThemeProvider theme={mode === 'dark' ? darkThemeChosen : lightThemeChosen}>
+                <SessionProvider session={session}>
+                    <CssBaseline/>
+                    <Header ColorModeContext={ColorModeContext}/>
+                    <Component {...pageProps} />
+                </SessionProvider>
+            </ThemeProvider>
+        </ColorModeContext.Provider>
+    )
+}
+export default App;
