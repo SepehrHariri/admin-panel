@@ -1,21 +1,50 @@
 {
-  "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+	"compilerOptions": {
+		"baseUrl": "./src",
+		"paths": {
+			"@hooks/*": ["./hooks/*"],
+			"@redux/*": ["./redux/*"],
+			"@utils/*": ["./utils/*"],
+			"@assets/*": ["./assets/*"],
+			"@shared/*": ["./components/shared/*"],
+			"@atoms/*": ["./components/atoms/*"],
+			"@molecules/*": ["./components/molecules/*"],
+			"@organisms/*": ["./components/organisms/*"],
+			"@pages/*": ["./components/pages/*"],
+			"@templates/*": ["./components/templates/*"]
+		},
+		"target": "es2015",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"allowJs": true,
+		"types": [
+			"jest",
+			"node",
+			"@types/react-redux",
+			"@testing-library/jest-dom",
+			"cypress"
+		],
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"noFallthroughCasesInSwitch": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "react-jsx"
+	},
+	"include": [
+		"src",
+		"__tests__",
+		"**/*.ts",
+		"craco.config.js",
+		"cypress.config.js",
+		"jest.config.js",
+		"cypress/tsconfig.json",
+		"cypress/**/*.ts"
+	],
+	"exclude": ["cypress.config.ts", "cypress", "node_modules"]
 }
