@@ -1,6 +1,6 @@
-# XBoard React
+# Admin Panel
 
-Welcome to XBoard React! This project is a React-based application designed to create reusable components and utilities for a seamless user experience.
+This project is a React-based application designed to create reusable components and utilities for a seamless user experience.
 
 ## Table of Contents
 
@@ -24,8 +24,8 @@ Welcome to XBoard React! This project is a React-based application designed to c
 To get started with this project, clone the repository and install the necessary dependencies:
 
 ```typescript
-git clone https://github.com/siavash1991/xboard-react.git
-cd xboard-react
+git clone https://github.com/sepehrhariri/admin-panel.git
+cd admin-panel
 npm install
 ```
 
@@ -325,11 +325,11 @@ Thank you for your interest in contributing to XBoard React! Contributions are w
 
 #### 1. Fork the Repository:
 
-Start by creating a fork of the XBoard React repository.
+Start by creating a fork of the Admin Panel repository.
 
 ```bash
-git clone https://github.com/siavash1991/xboard-react.git
-cd xboard-react
+git clone https://github.com/sepehrhariri/admin-panel.git
+cd admin-panel
 
 ```
 
@@ -383,7 +383,7 @@ git push origin feature/your-feature-name
 
 #### 8. Create a Pull Request:
 
-Open a pull request (PR) to the main XBoard React repository. Include a detailed description of your changes, the problem they address, and any relevant information for the reviewers.
+Open a pull request (PR) to the main Admin Panel repository. Include a detailed description of your changes, the problem they address, and any relevant information for the reviewers.
 
 ```bash
 git push origin feature/your-feature-name
@@ -401,9 +401,9 @@ git push origin feature/your-feature-name
 
 For any inquiries or feedback, you can reach me at:
 
--   **Siavash Rahimi Azad**
--   [GitHub](https://github.com/siavash1991)
--   [LinkedIn](https://www.linkedin.com/in/siavash-rahimi-azad/)
+-   **Sepehr Hariri**
+-   [GitHub](https://github.com/sepehrhariri)
+-   [LinkedIn](https://www.linkedin.com/in/sepehr-s-hariri/)
 
 ## License
 
